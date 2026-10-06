@@ -1,0 +1,896 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Baloo 2', sans-serif;
+    overflow-x: hidden;
+}
+
+
+
+/* =========================================
+   PANTALLA DEL SOBRE
+========================================= */
+
+.pantalla-sobre {
+
+    min-height: 100vh;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px 20px;
+
+    background:
+        radial-gradient(
+            circle at 20% 15%,
+            rgba(255,255,255,.15),
+            transparent 18%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(255,255,255,.12),
+            transparent 20%
+        ),
+        linear-gradient(
+            145deg,
+            #8e0928,
+            #c5163c,
+            #9d0c2c
+        );
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+/*UBICACION*/
+/*
+.texto-inicial {
+    position: relative;
+
+    z-index: 20;
+
+    color: white;
+
+    margin-bottom-MAPA: 35px;
+
+    animation:
+        aparecer 1.5s ease;
+}
+
+
+/* =========================================
+   TEXTO
+========================================= */
+
+.texto-inicial {
+    position: relative;
+
+    z-index: 20;
+
+    color: white;
+
+    margin-bottom: 35px;
+
+    animation:
+        aparecer 1.5s ease;
+}
+
+.texto-inicial .pequeno {
+
+    font-size: 17px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 10px;
+}
+
+.texto-inicial h1 {
+
+    font-family: 'Pacifico';
+
+    font-size: 31px;
+
+    font-weight: 400;
+}
+
+.texto-inicial h2 {
+
+    font-family: 'Pacifico', cursive;
+
+    font-size: 65px;
+
+    color: #ffd7df;
+
+    text-shadow:
+        0 3px 0 #8c0a28,
+        0 0 15px rgba(255,255,255,.3);
+
+    margin-top: 5px;
+}
+
+
+/* =========================================
+   SOBRE
+========================================= */
+
+.sobre {
+
+    width: 320px;
+
+    height: 215px;
+
+    position: relative;
+
+    perspective: 1200px;
+
+    cursor: pointer;
+
+    z-index: 30;
+
+    filter:
+        drop-shadow(
+            0 20px 25px rgba(0,0,0,.3)
+        );
+}
+
+
+/* Fondo del sobre */
+
+.sobre-fondo {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff9ef,
+            #ffe9d7
+        );
+
+    border-radius: 8px;
+
+    z-index: 1;
+}
+
+
+/* =========================================
+   CARTA
+========================================= */
+
+.carta {
+
+    position: absolute;
+
+    width: 88%;
+
+    height: 185px;
+
+    left: 6%;
+
+    bottom: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffdf9,
+            #fff1e4
+        );
+
+    border-radius: 6px;
+
+    z-index: 2;
+
+    padding: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,.12);
+
+    transition:
+        transform 1.2s cubic-bezier(.2,.8,.2,1);
+
+    color: #9e1531;
+}
+
+.carta p {
+
+    font-size: 15px;
+}
+
+.carta h3 {
+
+    font-family: 'Pacifico', cursive;
+
+    font-size: 35px;
+
+    color: #c5163c;
+
+    margin: 3px 0;
+}
+
+.carta span {
+
+    font-size: 15px;
+
+    color: #7d2032;
+}
+
+.sello {
+
+    font-size: 32px;
+
+    margin-bottom: 2px;
+}
+
+
+/* =========================================
+   SOLAPA
+========================================= */
+
+.solapa {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left:
+        160px solid transparent;
+
+    border-right:
+        160px solid transparent;
+
+    border-top:
+        112px solid #d9284d;
+
+    transform-origin: top center;
+
+    z-index: 5;
+
+    transition:
+        transform 1s
+        cubic-bezier(.2,.8,.2,1);
+}
+
+
+/* =========================================
+   PARTE FRONTAL
+========================================= */
+
+.frente {
+
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 112px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f4d6c3,
+            #ffe9d9
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            50% 55%,
+            100% 0,
+            100% 100%,
+            0 100%
+        );
+
+    border-radius: 0 0 8px 8px;
+
+    z-index: 6;
+}
+
+
+/* =========================================
+   SELLO
+========================================= */
+
+.sello-corazon {
+
+    position: absolute;
+
+    width: 55px;
+    height: 55px;
+
+    left: calc(50% - 27.5px);
+
+    top: 82px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at 30% 30%,
+            #ff6982,
+            #c9143b
+        );
+
+    color: white;
+
+    font-size: 31px;
+
+    z-index: 10;
+
+    box-shadow:
+        0 4px 10px rgba(0,0,0,.25);
+
+    transition:
+        transform .5s,
+        opacity .4s;
+}
+
+
+/* =========================================
+   SOBRE ABIERTO
+========================================= */
+
+.sobre.abierto .solapa {
+
+    transform:
+        rotateX(180deg);
+
+    z-index: 1;
+}
+
+
+.sobre.abierto .carta {
+
+    transform:
+        translateY(-155px);
+
+    z-index: 8;
+}
+
+
+.sobre.abierto .sello-corazon {
+
+    opacity: 0;
+
+    transform:
+        scale(.5);
+}
+
+
+/* =========================================
+   BOTÓN
+========================================= */
+
+.boton-abrir {
+
+    margin-top: 55px;
+
+    padding: 15px 30px;
+
+    border: 2px solid rgba(255,255,255,.8);
+
+    border-radius: 50px;
+
+    background:
+        rgba(255,255,255,.95);
+
+    color: #a70d2e;
+
+    font-family:
+        'Baloo 2',
+        sans-serif;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.25);
+
+    transition:
+        transform .3s,
+        box-shadow .3s;
+}
+
+.boton-abrir:hover {
+
+    transform:
+        scale(1.07);
+
+    box-shadow:
+        0 12px 25px rgba(0,0,0,.3);
+}
+
+.boton-abrir span {
+
+    display: inline-block;
+
+    animation:
+        latido 1.2s infinite;
+}
+
+
+.instruccion {
+
+    color: rgba(255,255,255,.85);
+
+    font-size: 14px;
+
+    margin-top: 12px;
+}
+
+
+/* =========================================
+   FRESAS FLOTANDO
+========================================= */
+
+.fresa {
+
+    position: absolute;
+
+    font-size: 35px;
+
+    z-index: 5;
+
+    pointer-events: none;
+}
+
+.flotante {
+
+    animation:
+        flotar 5s ease-in-out infinite;
+}
+
+.fresa1 {
+    left: 8%;
+    top: 12%;
+    animation-delay: 0s;
+}
+
+.fresa2 {
+    right: 10%;
+    top: 20%;
+    animation-delay: 1s;
+}
+
+.fresa3 {
+    left: 12%;
+    bottom: 12%;
+    animation-delay: 2s;
+}
+
+.fresa4 {
+    right: 8%;
+    bottom: 15%;
+    animation-delay: 3s;
+}
+
+.fresa5 {
+    left: 48%;
+    top: 5%;
+    font-size: 25px;
+    animation-delay: 1.5s;
+}
+
+
+@keyframes flotar {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(-8deg);
+    }
+
+    50% {
+        transform:
+            translateY(-22px)
+            rotate(8deg);
+    }
+}
+
+
+/* =========================================
+   BRILLOS
+========================================= */
+
+.brillo {
+
+    position: absolute;
+
+    color: #ffe5eb;
+
+    font-size: 28px;
+
+    animation:
+        brillo 2s ease-in-out infinite;
+
+    z-index: 4;
+}
+
+.brillo1 {
+    top: 18%;
+    left: 25%;
+}
+
+.brillo2 {
+    top: 35%;
+    right: 22%;
+    animation-delay: .5s;
+}
+
+.brillo3 {
+    bottom: 25%;
+    left: 25%;
+    animation-delay: 1s;
+}
+
+.brillo4 {
+    bottom: 15%;
+    right: 25%;
+    animation-delay: 1.5s;
+}
+
+@keyframes brillo {
+
+    0%,
+    100% {
+        opacity: .25;
+        transform: scale(.7);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+}
+
+
+/* =========================================
+   ANIMACIONES
+========================================= */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes latido {
+
+    0%,
+    100% {
+        transform:
+            scale(1);
+    }
+
+    50% {
+        transform:
+            scale(1.15);
+    }
+}
+
+
+/* =========================================
+   SALIDA DEL SOBRE
+========================================= */
+
+.pantalla-sobre.salir {
+
+    opacity: 0;
+
+    transform:
+        scale(1.08);
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   INVITACIÓN
+========================================= */
+
+.oculto {
+    display: none;
+}
+
+.invitacion {
+    min-height: 100vh;
+
+    background: #fff2f4;
+
+    color: #79152a;
+}
+
+
+/* =========================================
+   PORTADA
+========================================= */
+
+.portada {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            #ffd1da 0 7%,
+            transparent 8%
+        ),
+        radial-gradient(
+            circle at 90% 85%,
+            #ffd5dd 0 8%,
+            transparent 9%
+        ),
+        #fff5ee;
+}
+
+.portada h1 {
+
+    font-family: 'Pacifico', cursive;
+
+    font-size: 32px;
+}
+
+.portada h2 {
+
+    font-family: 'Pacifico', cursive;
+
+    font-size: 70px;
+
+    color: #c5163c;
+}
+
+.fresa-principal {
+
+    font-size: 100px;
+
+    animation:
+        flotar 3s infinite;
+}
+
+.mensaje {
+
+    max-width: 550px;
+
+    font-size: 20px;
+
+    line-height: 1.5;
+
+    margin: 15px;
+}
+
+.papas {
+
+    font-size: 18px;
+
+    margin-top: 15px;
+}
+
+
+/* =========================================
+   SECCIONES
+========================================= */
+
+.seccion {
+
+    padding: 70px 20px;
+
+    text-align: center;
+
+    background: white;
+}
+
+.seccion h2 {
+
+    font-family: 'Pacifico', cursive;
+
+    color: #bd1238;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================================
+   CONTADOR
+========================================= */
+
+.contador {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 30px;
+}
+
+.contador div {
+
+    width: 80px;
+
+    height: 80px;
+
+    border-radius: 18px;
+
+    background: #c5163c;
+
+    color: white;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.contador strong {
+
+    font-size: 25px;
+}
+
+.contador small {
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   FINAL
+========================================= */
+
+.final {
+
+    min-height: 55vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            145deg,
+            #9b0c2d,
+            #c5163c
+        );
+}
+
+.fresas-final {
+
+    font-size: 45px;
+
+    margin-bottom: 20px;
+}
+
+.final h2 {
+
+    font-family: 'Pacifico', cursive;
+
+    font-size: 38px;
+}
+
+.final h3 {
+
+    font-family: 'Pacifico', cursive;
+
+    font-size: 40px;
+
+    margin-top: 20px;
+}
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 600px) {
+
+    .texto-inicial h1 {
+        font-size: 26px;
+    }
+
+    .texto-inicial h2 {
+        font-size: 55px;
+    }
+
+    .sobre {
+        width: 290px;
+        height: 195px;
+    }
+
+    .solapa {
+        border-left-width: 145px;
+        border-right-width: 145px;
+        border-top-width: 105px;
+    }
+
+    .carta {
+        height: 170px;
+    }
+
+    .sobre.abierto .carta {
+        transform:
+            translateY(-140px);
+    }
+
+    .fresa {
+        font-size: 28px;
+    }
+
+    .portada h2 {
+        font-size: 55px;
+    }
+}
